@@ -13,13 +13,14 @@
 	<body ng-app="mainApp" ng-controller="mainCtr">
 		<header>
 			<nav>菜单</nav>
+			<div class="rotateBox" style="height: 100px;width: 100px;">
+				<img style="height: 100%;width: 100%;" src="img/7d080ef35d48bc43dfd336b262a80af8.png"/>
+			</div>
 		</header>
 		<div class="main-content">
 			<div class="left-nav fl">
 				<ul>
-					<li><a ui-sref="/">首页</a></li>
-					<li><a ui-sref="dialog">bootStrap dialog</a></li>
-					<li><a ui-sref="data-Table"> data table</a></li>
+					<li ng-if="menu.grade == 1" ng-repeat="menu in menu_code track by $index"><a ui-sref="{{menu.node}}">{{menu.title}}</a></li>
 				</ul>
 			</div>
 			<div class="mainPage fl">
@@ -29,6 +30,7 @@
 	</body>
 	<!--jQuery-->
 	<script src="libs/jQuery/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="libs/jQuery/jquery.rotate.min.js" type="text/javascript" charset="utf-8"></script>
 	<!--bootstrap-->
 	<script src="libs/bootstrap/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="libs/bootstrap-dialog/bootstrap-dialog.min.js" type="text/javascript" charset="utf-8"></script>
@@ -46,8 +48,23 @@
 	<!--<script src="libs/yook_ui/yook.ui.js" type="text/javascript" charset="utf-8"></script>-->
 	
 		
+	<!--路由菜单 配置文件-->
+	<script src="js/menu_code.js" type="text/javascript" charset="utf-8"></script>
 	<!--App-->
 	<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/config_router.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var rotation = function (){
+		   $(".rotateBox").rotate({
+		      angle:0, 
+		      animateTo:360, 
+		      callback: rotation,
+		      easing: function (x,t,b,c,d){        // t: current time, b: begInnIng value, c: change In value, d: duration
+		          return c*(t/d)+b;
+		      }
+		   });
+		}
+		rotation();
+	</script>
 </html>

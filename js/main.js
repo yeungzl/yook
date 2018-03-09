@@ -1,5 +1,6 @@
 'use strict';
 	var yookApp = angular.module('mainApp').controller("mainCtr",function($http,$scope,$rootScope,$filter){
+		$scope.menu_code = menu_code;
 		$scope.xxx = "200";
 	//	function systermAlert(data) {
 	//		BootstrapDialog.alert({

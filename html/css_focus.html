@@ -1,0 +1,36 @@
+<div ng-controller="focusCtr">
+	<h2>input or textarea focus</h2>
+	<div class="input-textarea-box">
+		<input type="text" placeholder="请点击" />
+		<textarea name="" placeholder="请点击" rows="" cols=""></textarea>
+	</div>
+	<hr />
+	<h2>input joint select</h2>
+	<div class="input-select-box pos-relative">
+		<input type="text" ng-model="selectVal" name="" id="" value="" class="pos-absolute"/>
+		<select class="pos-absolute" ng-model="selectVal">
+			<option value="please select">please select</option>
+			<option value="one">one</option>
+			<option value="two">two</option>
+			<option value="three">three</option>
+		</select>
+	</div>
+	<h2>search joint select</h2>
+	<div class="search-select-bar clearfix">
+		<span class="search-remind fl">搜&ensp;索</span>
+		<div class="search-box fl pos-relative">
+			<input type="text" placeholder="search" ng-model="searchVal1" ng-focus="editSearchFn(searchVal1)" ng-change="editSearchFn(searchVal1)" style="padding-left: 4px;" name="" id="" value="" />
+			<ul ng-if="searchList.length > 0" style="height:auto;border: 1px solid deepskyblue;background: #FFFFFF;">
+				<li ng-repeat="item in searchList" ng-click="choseSearchFn(item)" style="padding-left: 4px;z-index: 200;">
+					{{item}}
+				</li>
+			</ul>
+			<!--<select ng-if="searchList.length > 0" ng-model="searchVal">
+				<option ng-repeat="item in searchList" ng-selected="searchVal == item" value="{{item}}">
+					{{item}}
+				</option>
+			</select>-->
+		</div>
+		<span class="glyphicon glyphicon-search txt-center search-btn"></span>
+	</div>
+</div>

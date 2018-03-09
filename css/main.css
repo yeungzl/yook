@@ -1,11 +1,34 @@
 *{
 	padding: 0px;
 	margin: 0px;
+	box-sizing: border-box;
 }
 body{
 	font-size: 14px;
 	width: 90%;
 	margin: auto;
+}
+li {
+	list-style: none;
+}
+a:hover,
+a:active,
+a:visited,
+a:link,
+a:focus {
+	text-decoration: none;
+	outline: none;
+}
+:focus {
+	outline: none;
+}
+input, select {
+	outline: none;
+}
+input:focus, textarea:focus {
+	/*border: none !important;*/
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
 }
 .clearfix:after{
 	display: inline-block;
@@ -40,8 +63,22 @@ body{
 .border-l{
 	border-left: 1px solid #ccc;
 }
+.pos-absolute{
+	position: absolute;
+}
+.pos-relative{
+	position: relative;
+}
 
-
+.txt-center{
+	text-align: center;
+}
+.txt-left{
+	text-align:left;
+}
+.txt-right{
+	text-align:right;
+}
 /*主界面的样式*/
 .main-content{
 	width: 100%;
@@ -53,6 +90,139 @@ body{
 	margin: auto;
 	width: calc(100% - 200px);
 	min-height: 700px;
-	border-left: 3px dotted #ccc;
+	border-left: 3px dotted grey;
 	padding-left: 50px;
+}
+
+/*二级路由*/
+.second-block{
+	width: 100%;
+}
+/*
+ * input textarea 聚焦 
+ * */
+.input-textarea-box input:focus,
+.input-textarea-box textarea:focus{
+	border: 1px solid rgb(138, 215, 253);
+}
+
+.menu-box{
+	width:300px;
+	height: 300px;
+	background: rgba(242,242,242,0.8);
+}
+.current{
+	height: 100%;
+	float: right;
+	width: 30px;
+}
+.menu-box .current:nth-last-child(1){
+	width: calc(100% - 60px);
+}
+.menu-box .title {
+	width: 30px;
+	background: lightblue;
+	height: 100%;
+	float: right;
+	overflow: hidden;	
+}
+.menu-box .content {
+	width: calc(100% - 30px);
+	background: indianred;
+	height: 100%;
+	float: right;
+	overflow: hidden;
+}
+
+
+
+
+.menu-box .current1 {
+	height: 100%;
+	float: left;
+	background: indianred;
+}
+.menu-box .current1 .content1 {
+	display: none;
+	width: 210px;
+	overflow: hidden;
+	height: 100%;
+	float: right;
+}
+.menu-box .current1:nth-child(1) .content1:nth-child(2){
+	display: block;
+}
+
+/*input joint sselect*/
+.input-select-box {
+	width: 90px;
+	height: 28px;
+}
+.input-select-box input, .input-select-box select {
+	width: 100%;
+	height: 28px;
+	line-height: 28px;
+	left: 0px;
+}
+.input-select-box select {
+	opacity: 0;
+}
+ /*search joint select*/
+.search-select-bar{
+	width:400px;
+	height: 30px;
+	border: 1px solid deepskyblue;
+}
+.search-select-bar .search-remind {
+	width: 60px;
+	height: 100%;
+	line-height: 30px;
+	text-align: center;
+	background-color: #4876FF;
+	color: white;
+	font-weight: bold;
+}
+.search-select-bar .search-box {
+	width: calc(100% - 90px);
+	height: 100%;
+}
+.search-select-bar .search-box input {
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+.search-select-bar .search-box ul {
+	width: calc(100% + 31px);
+	height: 100%;
+	/*border: 1px solid deepskyblue;*/
+	line-height: 30px;
+}
+.search-select-bar .search-box select {
+	width: calc(100% + 31px);
+	border: 1px solid deepskyblue;
+	line-height: 30px;
+	opacity: 0;
+	position: absolute;
+	top: 0px;
+	height: 100%;
+}
+.search-select-bar .search-btn {
+	height: 100%;
+	width: 30px;
+	line-height: 27px;
+	float: left;
+	cursor: pointer;
+}
+/*angular 区块*/
+.ng-page {
+	
+}
+.ng-page .ng-nav {
+	width: 200px;
+}
+.ng-page .ng-mainPage{
+	width: calc(100% - 200px);
+	height: 605px;
+	border-left: 2px dotted #ccc;
+	padding-left: 5px;
 }
