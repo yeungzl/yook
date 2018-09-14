@@ -1,0 +1,14 @@
+<div  ng-controller="ES6BlockCtr">
+	<h2>This is ES6 block</h2>
+	<hr />
+	<div class="second-block">
+		<div class="main-nav fl">
+			<ul>
+				<li ng-if="menu.grade == 7" ng-repeat="menu in menu_code track by $index"><a ui-sref="{{menu.node}}">{{menu.title}}</a></li>
+			</ul>
+		</div>
+		<div class="main-page fl">
+			<div ui-view=""></div>
+		</div>
+	</div>
+</div>

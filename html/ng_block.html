@@ -1,13 +1,13 @@
 <div  ng-controller="ngBlockCtr">
 	<h2>This is Angular block</h2>
 	<hr />
-	<div class="ng-page second-block">
-		<div class="ng-nav fl">
+	<div class="second-block">
+		<div class="main-nav fl">
 			<ul>
-				<li ng-if="menu.grade == 2" ng-repeat="menu in menu_code track by $index"><a ui-sref="{{menu.node}}">{{menu.title}}</a></li>
+				<li ng-if="menu.grade == 6" ng-repeat="menu in menu_code track by $index"><a ui-sref="{{menu.node}}">{{menu.title}}</a></li>
 			</ul>
 		</div>
-		<div class="ng-mainPage fl">
+		<div class="main-page fl">
 			<div ui-view=""></div>
 		</div>
 	</div>

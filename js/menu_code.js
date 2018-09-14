@@ -35,11 +35,31 @@ var menu_code ={
 	601 : {
 		title:"ng-test1",     //angular  测试区块1	
 		node:"ngArea.test",
-		grade:2,
+		grade:6,
 	},
 	602 : {
 		title:"ng-test2",     //angular    测试区块2
 		node:"ngArea.test2",
-		grade:2,
+		grade:6,
 	},
+	7 : {
+		title:"ES6-block",     //ES6区块	
+		node:"ES6Block",
+		grade:1,
+	},
+	701 : {
+		title:"ES6-know",     //ES6   了解区块	
+		node:"ES6Block.know",
+		grade:7,
+	},
+	702 : {
+		title:"ES6-fun",     //ES6   函数区块	
+		node:"ES6Block.fun",
+		grade:7,
+	},
+	8 : {
+		title:"Date", // new Date()区块
+		node:"date",
+		grade:1,
+	}
 }

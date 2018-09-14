@@ -63,7 +63,8 @@ app.config(['$stateProvider', '$urlRouterProvider',function($stateProvider, $url
 	            }]
 	        }
 		})
-		.state('ngArea',{
+		// angularJS文件设置区  一级菜单
+		.state('ngArea',{ 
 			url:'/ngArea',
 			templateUrl: prefixHtml + 'ng_block' + postfixHtml,
 //			controller: "secondCtr",
@@ -84,7 +85,7 @@ app.config(['$stateProvider', '$urlRouterProvider',function($stateProvider, $url
 	            loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
 	                return $ocLazyLoad.load({
 	                	name: 'mainApp',
-	                	files:[perfixJs + 'ng_block' + postfixJs]
+	                	files:[perfixJs + 'ng_block_js/ng_test1' + postfixJs]
 		            });
 	            }]
 	        }
@@ -98,6 +99,61 @@ app.config(['$stateProvider', '$urlRouterProvider',function($stateProvider, $url
 	                return $ocLazyLoad.load({
 	                	name: 'mainApp',
 	                	files:[perfixJs + 'ng_block' + postfixJs]
+		            });
+	            }]
+	        }
+		})
+		// ES6	区域   一级菜单
+		.state('ES6Block',{
+			url:'/ES6_block',
+			templateUrl: prefixHtml + 'ES6' + postfixHtml,
+//			controller: "secondCtr",
+			resolve: {
+	            loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
+	                return $ocLazyLoad.load({
+	                	name: 'mainApp',
+	                	files:[perfixJs + 'ES6' + postfixJs]
+		            });
+	            }]
+	        }
+		})
+		.state('ES6Block.know',{
+			url:'/know',
+			templateUrl: prefixHtml + 'ES6_block/know' + postfixHtml,
+//			controller: "secondCtr",
+			resolve: {
+	            loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
+	                return $ocLazyLoad.load({
+	                	name: 'mainApp',
+	                	files:[perfixJs + 'ES6_block/know' + postfixJs]
+		            });
+	            }]
+	        }
+		})
+		// ES6  函数
+		.state('ES6Block.fun',{
+			url:'/ES6_fun',
+			templateUrl: prefixHtml + 'ES6_block/fun' + postfixHtml,
+//			controller: "secondCtr",
+			resolve: {
+	            loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
+	                return $ocLazyLoad.load({
+	                	name: 'mainApp',
+	                	files:[perfixJs + 'ES6_block/fun' + postfixJs]
+		            });
+	            }]
+	        }
+		})
+		// new Date	区域   一级菜单
+		.state('date',{
+			url:'/date',
+			templateUrl: prefixHtml + 'date' + postfixHtml,
+//			controller: "secondCtr",
+			resolve: {
+	            loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
+	                return $ocLazyLoad.load({
+	                	name: 'mainApp',
+	                	files:[perfixJs + 'date' + postfixJs]
 		            });
 	            }]
 	        }

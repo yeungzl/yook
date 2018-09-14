@@ -83,6 +83,9 @@ input:focus, textarea:focus {
 .main-content{
 	width: 100%;
 }
+nav[main] {
+	font-size: 35px;
+}
 .left-nav{
 	width: 200px;
 }
@@ -92,11 +95,45 @@ input:focus, textarea:focus {
 	min-height: 700px;
 	border-left: 3px dotted grey;
 	padding-left: 50px;
+	margin-top: -100px;
 }
-
+.html-text { /*html、 console的文本*/
+	color: #1A8C14;
+	font-weight: bolder;
+	font-size: 14px;
+}
+.html-text:before {
+	content:'<!--------  以下为html代码    ------>';
+	display:block;
+	color: rgba(189,153,63,0.61);
+}
+.console-text { /*html、 console的文本*/
+	color: #1A8C14;
+	font-weight: bolder;
+	font-size: 14px;
+}
+.console-text:before{  /*js的文本*/
+	content:'<!--------  以下为console结果    ------>';
+	display:block;
+	color: rgba(189,153,63,0.61);
+	margin-top: 10px;
+}
+h3[third-title]:before {
+	content:'<hr />';
+}
 /*二级路由*/
 .second-block{
 	width: 100%;
+}
+.second-block .main-nav {
+	width: 200px;
+}
+.second-block .main-page{
+	width: calc(100% - 200px);
+	height: 605px;
+	border-left: 2px dotted #ccc;
+	padding: 0px 15px 0px 15px;
+	overflow: auto;
 }
 /*
  * input textarea 聚焦 
@@ -213,16 +250,4 @@ input:focus, textarea:focus {
 	float: left;
 	cursor: pointer;
 }
-/*angular 区块*/
-.ng-page {
-	
-}
-.ng-page .ng-nav {
-	width: 200px;
-}
-.ng-page .ng-mainPage{
-	width: calc(100% - 200px);
-	height: 605px;
-	border-left: 2px dotted #ccc;
-	padding-left: 5px;
-}
+

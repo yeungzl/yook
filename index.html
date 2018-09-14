@@ -12,12 +12,12 @@
 	</head>
 	<body ng-app="mainApp" ng-controller="mainCtr">
 		<header>
-			<nav>菜单</nav>
+			<nav main>菜单</nav>
+		</header>
+		<div class="main-content">
 			<div class="rotateBox" style="height: 100px;width: 100px;">
 				<img style="height: 100%;width: 100%;" src="img/7d080ef35d48bc43dfd336b262a80af8.png"/>
 			</div>
-		</header>
-		<div class="main-content">
 			<div class="left-nav fl">
 				<ul>
 					<li ng-if="menu.grade == 1" ng-repeat="menu in menu_code track by $index"><a ui-sref="{{menu.node}}">{{menu.title}}</a></li>
